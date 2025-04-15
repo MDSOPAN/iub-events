@@ -38,6 +38,25 @@ main{
     width: 56px;
     display: inline;
 }
+
+.ftr{
+    
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.ftr_con{
+    max-width: 1200px;
+    display: flex;
+    width: 100%;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+}
+.ftr_con div{
+    color: white;
+}
 @media only screen and (max-width: 799px) {
     .event-list{
         grid-template-columns: 1fr 1fr;
@@ -50,8 +69,13 @@ main{
         grid-template-columns: 1fr;
 
     }
-  }
-  [data-theme="emerald"] {
+}
+@media only screen and (max-width: 350px) {
+    .ftr_con{
+        flex-direction: column;
+    }
+}
+[data-theme="emerald"] {
     .event-button{
         color: white;
     }
@@ -61,4 +85,5 @@ main{
     .event_t{
         color: black;
     }
+   
 }
