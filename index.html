@@ -33,11 +33,13 @@
             background-color: #45a049;
         }
     </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-base-200">
 
 <header>
     <div class="navbar bg-base-100 mb-6">
+        <img src="logo.png" alt="IUB Logo" class="logo">
         <a class="btn btn-ghost text-xl">Iub Events</a>
         <div class="btn justify-end">
             <label class="swap swap-rotate">
@@ -165,6 +167,7 @@ function filterFutureEvents(events) {
 
 // Display events based on the current page
 function displayEvents(events) {
+    console.log(events)
     const eventList = document.getElementById('eventList');
     eventList.innerHTML = '';
     
@@ -177,20 +180,14 @@ function displayEvents(events) {
         card.classList.add('card', 'bg-base-100', 'shadow-xl', 'mb-6');
         card.innerHTML = `
             <figure>
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Event Image" />
+                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Event Image" class="event_img" />
             </figure>
-            <div class="card-body">
-                <h2 class="card-title text-2xl mb-2">${event.eventName}</h2>
-                <p class="text-lg">Date: ${event.eventDate}</p>
-                <p class="text-lg">Time: ${event.eventTime}</p>
-                <p class="text-lg">Location: ${event.location}</p>
-                <div class="card-actions justify-start mt-4">
-                    <div class="badge badge-outline mr-2">${event.category}</div>
-                    <div class="badge badge-outline">${event.department}</div>
-                    <div class="badge badge-secondary">${event.club}</div>
-                </div>
-                <a href="event-details.html?eventName=${encodeURIComponent(event.eventName)}&eventDate=${encodeURIComponent(event.eventDate)}&eventTime=${encodeURIComponent(event.eventTime)}&eventLocation=${encodeURIComponent(event.location)}&eventDescription=${encodeURIComponent(event.description)}" class="btn btn-primary mt-4">Details</a>
-
+            <div class="event-body">
+                <h2 class="event_h dark:text-black">${event.eventName}</h2>
+                <p class="event_t dark:text-black">${event.eventTime} | ${event.eventDate}</p>
+                <!-- <p class="text-lg">Location: ${event.location}</p> -->
+                <!-- <a href="event-details.html?eventName=${encodeURIComponent(event.eventName)}&eventDate=${encodeURIComponent(event.eventDate)}&eventTime=${encodeURIComponent(event.eventTime)}&eventLocation=${encodeURIComponent(event.location)}&eventDescription=${encodeURIComponent(event.description)}" class="btn btn-primary mt-4">Details</a>-->
+                <button class="mt-4 event-button dark:text-white">${event.club}</button>
             </div>
         `;
         eventList.appendChild(card);
