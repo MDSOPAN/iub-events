@@ -51,7 +51,7 @@ main{
 
     }
   }
-@media (prefers-color-scheme: dark) {
+  [data-theme="emerald"] {
     .event-button{
         color: white;
     }
