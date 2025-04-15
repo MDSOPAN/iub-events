@@ -51,3 +51,14 @@ main{
 
     }
   }
+@media (prefers-color-scheme: light) {
+    .event-button{
+        color: white;
+    }
+    .event_h{
+        color: black;
+    }
+    .event_t{
+        color: black;
+    }
+}
